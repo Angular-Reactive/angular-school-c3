@@ -1,4 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<!-- Antes de usar RxJS -->
+<!-- Con la sintaxis del parentesis es como le digo a Angular desde
+     el lado HTML que se subscriba a ese output "value" del componente
+     "searchbox" (que emite el texto que se escribe), y le estoy
+     indicando que cada vez que reciba un evento, ejecute el metodo
+     "searchPosts()" del componente "app.component.ts".
+     -->
+<!--
+<div style="text-align:center">
+  <h1>
+    Search my posts!
+  </h1>
+  <app-searchbox (value)="searchPosts($event)"></app-searchbox>
+  <app-list>
+    <app-card *ngFor="let post of posts" [item]="post"></app-card>
+  </app-list>
+</div>
+-->
+
+<!-- Despues de usar RxJS -->
 <div style="text-align:center">
   <h1>
     Search my posts!

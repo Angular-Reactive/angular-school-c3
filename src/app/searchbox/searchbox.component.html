@@ -1,4 +1,9 @@
 <div>
+  <!-- La directiva "ngModel" de Angular sirve para que el valor del input se asocie con la
+       propiedad "text" declarada en el componente.
+       Se utiliza tambien el simbolo "#" para  declarar una template reference variable (en este
+       caso, #searchBox) asociada al model anterior ("ngModel")componente.
+       Esta es una variable que puedo usar desde el lado Typescript.-->
   <input type="text" [(ngModel)]="text" #searchBox="ngModel" placeholder="Search">
 </div>
 
