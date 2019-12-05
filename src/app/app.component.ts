@@ -10,13 +10,25 @@ import { switchMap } from 'rxjs/operators';
 })
 export class AppComponent {
   @ViewChild('search') searchBox:SearchboxComponent;
-  public posts;
+  public posts$;
   constructor(private postsService:PostsService){}
 
+  // Before apply la pipe AsyncPipe
+  /*
   ngOnInit(){
     this.searchBox.value
-    .pipe( switchMap(val => this.postsService.search(val)))
+    .pipe( switchMap(val => this.postsService.search(val)));
     .subscribe(data => this.posts = data);
-  }
+  }*/
 
+
+/**
+   * Al utilizar el pipe "asyncPipe" en la pagina HTML
+   * del componente para el Observable "posts$", puedo quitar
+   * la subscripcion que hago en el metodo ngOnInit.
+   */
+  ngOnInit(){
+    this.posts$ = this.searchBox.value
+    .pipe( switchMap(val => this.postsService.search(val)));
+  }
 }
